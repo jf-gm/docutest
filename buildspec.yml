@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:  
+  install:
+    runtime-versions:
+      nodejs: 12.x  
+  pre_build:
+    commands:
+      - npm install -g yarn
+  build:
+    commands:
+      - yarn
+      - yarn build
+  post_build:    
+    commands:
+      - aws s3 sync --acl public-read build/ s3://$S3_BUCKET_NAME/
+      - aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DIST_ID --paths '/*'
