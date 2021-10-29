@@ -10,7 +10,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Flugzeug</h1>
+        <h1 className="hero__title">Flugzeug ✈️</h1>
         <p className="hero__subtitle">Flugzeug test documentation</p>
         <div className={styles.buttons}>
           <Link
