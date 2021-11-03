@@ -3,6 +3,7 @@
   padding: 1rem;
   max-width: 1300px;
   margin: 0 auto;
+  margin-top: 2rem;
 }
 
 .component-code-window .visual-content {
@@ -219,6 +220,7 @@
   .component-code-window {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 0;
   }
 }
 

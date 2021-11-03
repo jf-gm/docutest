@@ -24,6 +24,12 @@
 
 .component-card-carousel .carousel-item .component-card img {
   max-width: 120px;
+  object-fit: contain;
+  height: 60px;
+}
+
+html[data-theme='light'] .component-card-carousel .carousel-item .component-card .title {
+  color: #0a0a0a;
 }
 
 .component-card-carousel .indicators {

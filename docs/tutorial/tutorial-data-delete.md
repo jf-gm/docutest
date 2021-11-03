@@ -14,17 +14,20 @@ This is going to return a 200 status with empty response, but we can modify the 
 
 ```js title="Hero.ts"
 ...
-  routes(): Router {
-    
+@Controller("hero", Hero)
+@ApiDocs()
+export class HeroController extends ModelController<Hero> {
     ...
 
-    this.router.delete("/:id", (req, res) => {
+    @ApiDocsRouteSummary("Delete Hero by Id")
+    @Delete("/:id")
+    @Auth()
+    @Middlewares([])
+    deleteHero=(req, res) => {
       const hero = this.handleFindOne(req, res);
       this.handleDelete(req, res);
       return hero;
-    });
-
-    return this.router;
+    }
   }
 ...
 ```

@@ -33,46 +33,18 @@ export const cardsList = [
 export const builtWith = [
   [
     {
-      img: '/img/test/bird.png',
-      title: 'ABC'
+      img: '/img/test/blastbotLogoRed.png',
+      title: 'Blastbot'
     },
     {
-      img: '/img/test/bird.png',
-      title: 'Cool'
+      img: '/img/test/breezeyLogo.svg',
+      title: 'Breezey'
     },
     {
-      img: '/img/test/bird.png',
-      title: 'Test'
+      img: '/img/test/Ksquare-logo-stack.png',
+      title: 'Ksquare Hire Site'
     }
-  ],
-  [
-    {
-      img: '/img/test/bird.png',
-      title: 'ABC 2'
-    },
-    {
-      img: '/img/test/bird.png',
-      title: 'Cool'
-    },
-    {
-      img: '/img/test/bird.png',
-      title: 'Test'
-    }
-  ],
-  [
-    {
-      img: '/img/test/bird.png',
-      title: 'ABC 3'
-    },
-    {
-      img: '/img/test/bird.png',
-      title: 'Cool'
-    },
-    {
-      img: '/img/test/bird.png',
-      title: 'Test'
-    }
-  ],
+  ]
 ]
 
 /* - - - - - - - - Code Window component data - - - - - - - - */

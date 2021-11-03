@@ -27,27 +27,37 @@ Now you will see a new file on ```app/controllers/v1``` with the name **Hero.ts*
 ```ts title="Hero.ts"
 ...
 
+@Controller("hero", Hero)
+@ApiDocs()
 export class HeroController extends ModelController<Hero> {
-  constructor() {
-    super();
-    this.name = "hero";
-    this.model = Hero;
-  }
+  @ApiDocsRouteSummary("Get a list of Heros")
+  @Get("/")
+  @Middlewares([])
+  getHeros=(req, res) => this.handleFindAll(req, res);
 
-  routes(): Router {
-    this.router.get("/", (req, res) => this.handleFindAll(req, res));
-    this.router.get("/:id", (req, res) => this.handleFindOne(req, res));
-    this.router.post("/", stripNestedObjects(), (req, res) =>
-      this.handleCreate(req, res),
-    );
-    this.router.put("/:id", stripNestedObjects(), (req, res) =>
-      this.handleUpdate(req, res),
-    );
-    this.router.delete("/:id", (req, res) => this.handleDelete(req, res));
+  @ApiDocsRouteSummary("Get a Hero by Id")
+  @Get("/:id")
+  @Auth()
+  @Middlewares([])
+  getHero=(req, res) => this.handleFindOne(req, res);
 
-    return this.router;
-  }
+  @ApiDocsRouteSummary("Adds a new Hero")
+  @Post("/")
+  @Auth()
+  @Middlewares([stripNestedObjects(),])
+  postHero=(req, res) => this.handleCreate(req, res);
+
+  @ApiDocsRouteSummary("Upload Hero by Id")
+  @Put("/:id")
+  @Auth()
+  @Middlewares([stripNestedObjects(),])
+  putHero=(req, res) => this.handleUpdate(req, res);
+
+  @ApiDocsRouteSummary("Delete Hero by Id")
+  @Delete("/:id")
+  @Auth()
+  @Middlewares([])
+  deleteHero=(req, res) => this.handleDelete(req, res);
 }
-
 ...
 ```
