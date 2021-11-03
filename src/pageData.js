@@ -56,8 +56,6 @@ export const commandOptions = [
 
 export const codeTextFiles = [
   `
-...
-
 @ApiDocs(true)
 @Table({
   tableName: "hero",
@@ -72,12 +70,9 @@ export class Hero extends BaseModel<Hero> {
     defaultValue: null,
   })
   name: string;
-  
 }
   `,
   `
-...
-
 @Controller("hero", Hero)
 @ApiDocs()
 export class HeroController extends ModelController<Hero> {
