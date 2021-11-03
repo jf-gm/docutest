@@ -176,6 +176,25 @@ html[data-theme='dark'] .landing-page header .subtitle {
   z-index: 11;
 }
 
+@media only screen and (max-width: 996px) {
+  .navbar-sidebar {
+    height: 1000px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .landing-page header .title {
+    font-size: 18vw;
+  }
+}
+
+
+@media only screen and (max-width: 700px) {
+  .landing-page header .title {
+    padding: 0;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   
   .landing-page .forms-cool.top {

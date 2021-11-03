@@ -64,5 +64,13 @@ html[data-theme='light'] .component-card-carousel .carousel-item .component-card
     max-width: 50px;
     min-width: 0;
   }
+
+  .component-card-carousel .carousel-item {
+    flex-direction: column;
+  }
+
+  .component-card-carousel .carousel-item .component-card {
+    margin: 1rem 0;
+  }
   
 }
