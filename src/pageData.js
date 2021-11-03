@@ -58,10 +58,14 @@ export const codeTextFiles = [
   `
 ...
 
+@ApiDocs(true)
 @Table({
   tableName: "hero",
 })
 export class Hero extends BaseModel<Hero> {
+  @ResponseRequired(true)
+  @RequestRequired(true)
+  @UpdateRequired(true)
   @Column({
     type: DataType.STRING,
     allowNull: true,

@@ -17,6 +17,13 @@ sidebar_position: 2
 
 Models and associations will be automatically loaded on app startup, it is only needed to import the model where required.
 
+#### Hook decorators
+
+- `@ApiDocs` defines if it's going to generate documentation for the controller.
+- `@ResponseRequired` optional decorator for API documentation.
+- `@RequestRequired` optional decorator for API documentation.
+- `@UpdateRequired` optional decorator for API documentation.
+
 Example:
 
 ```js
@@ -30,10 +37,14 @@ import {
 } from "sequelize-typescript";
 import { User } from "./User";
 
+@ApiDocs(true)
 @Table({
   tableName: "profile",
 })
 export class Profile extends Model<Profile> {
+  @ResponseRequired(true)
+  @RequestRequired(true)
+  @UpdateRequired(true)
   @Column({
     type: DataType.STRING,
     allowNull: true,
