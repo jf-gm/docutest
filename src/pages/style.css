@@ -1,0 +1,235 @@
+html[data-theme='dark'] .landing-page,
+html[data-theme='dark'] .landing-page .header-c {
+  background-color: #334457;
+  background-color: #292e46;
+  background-image: radial-gradient(circle at 1px 1px, #fafafa82 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+html[data-theme='dark'] .landing-page .header-c {
+  animation:move-x 150s linear infinite;
+}
+
+html[data-theme='dark'] .landing-page {
+  animation:move-x 150s linear infinite;
+  background-position-y: 20px;
+}
+
+html[data-theme='light'] .landing-page,
+html[data-theme='light'] .landing-page .header-c,
+html[data-theme='light'] main {
+  background-color: #f5f5f5;
+}
+
+.navbar.navbar--fixed-top {
+  background-color: rgb(171 186 255 / 7%);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.navbar.navbar--fixed-top .navbar__logo {
+  width: 0;
+}
+
+.landing-page .content {
+  margin: 0 auto;
+  width: 100%;
+  z-index: 10;
+}
+
+.landing-page .forms-cool {
+  width: 300px;
+  height: 600px;
+  border-radius: 150px;
+  position: absolute;
+  background-color: #cfd9ff9c;
+  z-index: 9;
+  
+}
+
+.landing-page .forms-cool.top {
+  top: -100px;
+  left: 20vw;
+  animation: inner-top 2s ease forwards, opacity-in-out 10s ease infinite;
+}
+
+.landing-page .forms-cool.bottom {
+  bottom: -100px;
+  right: 20vw;
+  animation: inner-bottom 2s ease forwards, opacity-in-out 10s ease infinite;
+}
+
+html[data-theme='light'] .landing-page .forms-cool.top {
+  background-color: #292e46;
+  background-image: radial-gradient(circle at 1px 1px, #fafafa82 1px, transparent 0);
+  background-size: 40px 40px;
+  animation: inner-top 2s ease forwards, opacity-in-out 10s ease infinite, move-x 15s linear infinite;
+}
+
+html[data-theme='light'] .landing-page .forms-cool.bottom {
+  background-color: #292e46;
+  background-image: radial-gradient(circle at 1px 1px, #fafafa82 1px, transparent 0);
+  background-size: 40px 40px;
+  animation: inner-bottom 2s ease forwards, opacity-in-out 10s ease infinite, move-x 15s linear infinite;
+}
+
+.landing-page header .title {
+  font-size: 5rem;
+  padding: 1em .5em;
+  display: inline-block;
+  animation: outer-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.landing-page header .title .text {
+  text-shadow: 0 15px 20px rgba(19, 37, 73, 0.75);
+  color: #fafafa;
+  animation: fade-in 2s ease forwards;
+}
+
+html[data-theme='dark'] .landing-page header .subtitle {
+  color: #fafafa;
+}
+
+.landing-page header .subtitle {
+  font-size: 1.5rem;
+  color: #2b2b2b;
+  padding: .5em;
+  /*text-shadow: 0 3px 10px rgba(0, 0, 0, 0.75);
+  */
+  display: inline-block;
+  animation: inner-left 1s 1s ease both,
+    text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.landing-page header .subtitle .text {
+  animation: fade-in-slow 2s ease forwards;
+}
+
+.landing-page .some {
+  background-color: rgb(220 226 255 / 13%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 11;
+}
+
+@media only screen and (max-width: 600px) {
+  
+  .landing-page .forms-cool.top {
+    top: -100px;
+    left: calc(50% - 150px);
+  }
+
+  .landing-page .forms-cool.bottom {
+    /* bottom: -100px;
+    right: calc(50% - 150px); */
+    visibility: hidden;
+  }
+  
+
+}
+
+@keyframes MOVE-BG {
+  from {
+    transform: translateX(0);
+  }
+  to { 
+    transform: translateX(-187%);
+  }
+}
+
+@keyframes text-clip {
+  from {
+    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 1%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes fade-in-slow {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 1%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+
+@keyframes outer-left {
+  from {
+    transform: translateX(calc(50% - 1em));
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes inner-top {
+  from {
+    transform: translateY(-60%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+
+@keyframes inner-bottom {
+  from {
+    transform: translateY(60%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes opacity-in-out {
+  0% {
+    opacity: 100%;
+  }
+  50% {
+    opacity: 50%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes change{
+  to {
+    background-position:right;
+  }
+}
+
+@keyframes move-x {
+  to {
+    background-position-x:right;
+  }
+}

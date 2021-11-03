@@ -1,0 +1,54 @@
+.component-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  padding: 1.5rem;
+  background-color: rgb(171 186 255 / 7%);
+  backdrop-filter: blur(10px);
+  z-index: 99;
+  border-radius: 5px;
+  box-shadow: 0px 4px 25px #0a0a0a5b;
+  animation: blur-out 2s ease forwards, backdrop-in-out 10s ease infinite;
+}
+
+.component-card img {
+  max-width: 200px;
+  min-width: 100px;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+
+.component-card .title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.component-card .description {
+  text-justify: distribute;
+}
+
+@keyframes blur-out {
+  0% {
+    opacity: 1%;
+    transform: scale(.9);
+    filter: blur(7px);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+@keyframes backdrop-in-out {
+  0% {
+    backdrop-filter: blur(1px);
+  }
+  50% {
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    backdrop-filter: blur(1px);
+  }
+}

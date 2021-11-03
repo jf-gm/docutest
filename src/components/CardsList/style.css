@@ -1,0 +1,44 @@
+.component-cards-list {
+  position: relative;
+  margin: 0 auto;
+  max-width: 900px;
+  z-index: 99;
+}
+
+.component-cards-list .card-item {
+  display: flex;
+  position: relative;
+}
+
+.component-cards-list .card-item.left {
+
+}
+
+.component-cards-list .card-item.right {
+  justify-content: flex-end;
+}
+
+.component-cards-list .card-item .component-card {
+  width: calc(50% + .8rem);
+  max-width: 100%;
+  padding: 2.5rem;
+}
+
+@media only screen and (max-width: 1150px) {
+  .component-cards-list {
+    padding: 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  
+  .component-cards-list .card-item {
+    margin-top: 1rem !important;
+  }
+
+  .component-cards-list .card-item .component-card {
+    width: auto;
+  }
+
+}

@@ -1,0 +1,256 @@
+.component-code-window {
+  display: flex;
+  padding: 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.component-code-window .visual-content {
+  position: relative;
+  padding: 1rem;
+  flex: 6;
+}
+
+.component-code-window .visual-content .terminal-bar {
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: rgb(255 255 255 / 18%);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  width: 55%;
+  top: 40px;
+  box-shadow: 3px 3px 10px #00000054;
+  white-space: nowrap;
+  display: flex;
+  overflow-y: hidden;
+  z-index: 11;
+}
+
+.component-code-window .visual-content .terminal-bar .command-options {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: transform 1s;
+}
+
+.component-code-window .visual-content .terminal-bar .command-options .command-option {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  /* transform: translateY(-0%); */
+}
+
+.component-code-window .visual-content .code-window {
+  background-color: #292929;
+  border-radius: 6px;
+  margin-left: 1em;
+  width: 55%;
+  margin-top: -10px;
+  float: right;
+  box-shadow: 4px 4px 15px #0a0a0aa4;
+}
+
+.component-code-window .visual-content .code-window .top-bar {
+  background-color: #333333;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.component-code-window .visual-content .code-window .top-bar .options {
+  display: flex;
+  margin: 10px;
+}
+
+.component-code-window .visual-content .code-window .top-bar .file-name {
+  background-color: #292929;
+  color: #919191;
+  border-radius: 6px 6px 0 0;
+  padding: 10px 20px;
+  font-size: 12px;
+}
+
+.component-code-window .visual-content .code-window .top-bar .options .b1,
+.component-code-window .visual-content .code-window .top-bar .options .b2,
+.component-code-window .visual-content .code-window .top-bar .options .b3 {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  margin: auto 3px;
+}
+
+.component-code-window .visual-content .code-window .top-bar .options .b1 {
+  background-color: #ff6666;
+}
+
+.component-code-window .visual-content .code-window .top-bar .options .b2 {
+  background-color: #ffd66f;
+}
+
+.component-code-window .visual-content .code-window .top-bar .options .b3 {
+  background-color: #b1e280;
+}
+
+.component-code-window .visual-content .code-window pre {
+  margin: 0;
+  border-radius: 0 0 6px 6px;
+  background-color: #292929;
+  padding: 2rem;
+  color: #ffffff;
+  transition: all 1s linear;
+  opacity: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 400px;
+}
+
+.component-code-window .visual-content .code-window pre.hide {
+  opacity: 0%;
+  transition: all 1s linear;
+}
+
+.component-code-window .visual-content .code-window pre .hide-bar-side {
+  height: 100%;
+  width: 3rem;
+  background: linear-gradient(90deg, rgba(41,41,41,0.37608546836703427) 0%, rgba(41,41,41,0.8494748241093313) 50%, rgba(41,41,41,1) 100%);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.component-code-window .visual-content .code-window pre .hide-bar-bottom {
+  height: 3rem;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(41,41,41,0.37608546836703427) 0%, rgba(41,41,41,0.8494748241093313) 50%, rgba(41,41,41,1) 100%);
+  position: absolute;
+  bottom: 0;
+}
+
+.component-code-window .visual-content .code-window pre code {
+  font-size: .7rem;
+}
+
+.component-code-window .visual-content .project-tree {
+  background-color: #292929;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 6px;
+  margin-left: 100px;
+  margin-top: 100px;
+  box-shadow: 4px 4px 15px #0a0a0aa4;
+  color: #ffffff;
+  transition: padding 2s ease, max-height 1s ease;
+  overflow: hidden;
+  max-height: 1000px;
+}
+
+.component-code-window .visual-content .project-tree.hide {
+  max-height: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.component-code-window .visual-content .project-tree .level {
+  display: flex;
+}
+
+.component-code-window .visual-content .project-tree .level.level-2 {
+  margin-left: 10px;
+}
+
+.component-code-window .visual-content .project-tree .level.level-3 {
+  margin-left: 20px;
+}
+
+
+.component-code-window .visual-content .project-tree .directory {
+  width: 20px;
+  height: 15px;
+  border-radius: 4px;
+  margin: auto 0;
+  margin-right: 5px;
+}
+
+.component-code-window .visual-content .project-tree .directory.red {
+  background-color: #e86b6b;
+}
+
+.component-code-window .visual-content .project-tree .directory.yellow {
+  background-color: #e8cf6b;
+}
+
+.component-code-window .visual-content .project-tree .directory.orange {
+  background-color: #e89d6b;
+}
+
+.component-code-window .visual-content .project-tree .file.blue {
+  background-color: #6b97e8;
+}
+
+.component-code-window .visual-content .project-tree .file {
+  width: 15px;
+  height: 18px;
+  border-radius: 4px;
+  margin: auto 0;
+  margin-right: 7.5px;
+  margin-left: 2.5px;
+}
+
+.component-code-window .description {
+  flex: 3;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.component-code-window .description p {
+  padding: 1rem;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1150px) {
+  .component-code-window {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .component-code-window .visual-content .project-tree {
+    margin-left: 8%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .component-code-window .visual-content .terminal-bar {
+    width: 100%;
+    position: unset;
+    margin-bottom: 1.5rem;
+  }
+
+  .component-code-window .visual-content .code-window {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  .component-code-window .visual-content .code-window .top-bar {
+    width: 100%;
+  }
+
+  .component-code-window .visual-content .project-tree {
+    margin: 0;
+    position: absolute;
+    margin-top: -100px;
+    right: 0;
+    box-shadow: 0px -1px 15px #0a0a0aa4;
+  }
+
+}

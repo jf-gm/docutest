@@ -39,13 +39,17 @@ const config = {
     ],
   ],
 
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600;700&display=swap"
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'Flugzeug ✈️',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'Flugzeug Logo',
           src: 'img/logo.svg',
         },
         items: [
@@ -55,9 +59,10 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
+          {to: '/docs/framework/framework-structure', label: 'Framework', position: 'left'},
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/Rodmg/flugzeug',
             label: 'GitHub',
             position: 'right',
           },
@@ -102,6 +107,10 @@ const config = {
               {
                 label: 'GitHub',
                 href: 'https://github.com/facebook/docusaurus',
+              },
+              {
+                label: 'npm',
+                href: 'https://www.npmjs.com/package/flugzeug',
               },
             ],
           },

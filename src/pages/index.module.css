@@ -8,7 +8,10 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #83b2ff;
+  background-color: #a9caff;
+  /*background-image: url("../../static/img/flugzeug.png");
+  background-size: 500px 500px;*/
+  
 }
 
 @media screen and (max-width: 966px) {
@@ -22,3 +25,4 @@
   align-items: center;
   justify-content: center;
 }
+

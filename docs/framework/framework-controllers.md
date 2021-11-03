@@ -13,11 +13,21 @@ sidebar_position: 3
 ### Controller definition
 
 - The controller must be a class that extends `Controller` or `ModelController`.
-- In the controller `this.name` must be defined (name that will be part of the controller route).
-- When extending `ModelController`, In the constructor, the model associated with the controller must be assigned to `this.model`.
-- The method `routes(): Router` must be defined assigning the routes to the controller routes, along with the desired "policies".
+- In the controller `@Controller` must be defined receiving two parameters: `('name', model)`.
+- The controller is going to be composed by some hook decorators:
 
-> Check out the `Controller` and `ModelController` class definition for examples on how to define the `routes` function and other useful controller implementations.
+#### Hook decorators
+
+- `@ApiDocs` defines if it's going to generate documentation for the controller.
+- `@ApiDocsRouteSummary` optional decorator that defines a description for the route.
+- `@Auth` defines if the route is going to be protected by authentication. Regardless of the order in which it is defined, this decorator will always be executed before the middleware.
+- `@Middlewares` receives a list of functions that are going to be executed before the route logic.
+- #### Method decorators
+  - By default, the route is `/`
+  - `@Get`
+  - `@Post`
+  - `@Put`
+  - `@Delete`
 
 Example:
 
@@ -25,25 +35,32 @@ Example:
 import { ModelController } from "@/libraries/ModelController";
 import { User } from "@/models/User";
 
-class UserController extends ModelController<User> {
-  constructor() {
-    super();
-    this.name = "user";
-    this.model = User;
-  }
+@ApiDocs(true)
+@Controller("user", User)
+export class UserController extends ModelController<User> {
+  @ApiDocsRouteSummary("Get a User by Id")
+  @Get("/:id")
+  @Auth()
+  @Middlewares([isSelfUser()])
+  getUser = (req: Request, res: Response) => {
+    this.handleFindOne(req, res);
+  };
 
-  routes(): Router {
-    // Example routes
-    // WARNING: Routes without policies
-    // You should add policies before your method
-    this.router.get("/", (req, res) => this.find(req, res));
-    this.router.get("/:id", (req, res) => this.findOne(req, res));
-    this.router.post("/", (req, res) => this.create(req, res));
-    this.router.put("/:id", (req, res) => this.update(req, res));
-    this.router.delete("/:id", (req, res) => this.destroy(req, res));
+  @ApiDocsRouteSummary("Upload a User by Id")
+  @Put("/:id")
+  @Auth()
+  @Middlewares([filterRoles(["admin"]), validateBody(UserSchema)])
+  updateUser = (req: Request, res: Response) => {
+    this.handleUpdate(req, res);
+  };
 
-    return this.router;
-  }
+  @ApiDocsRouteSummary("Delete User by Id")
+  @Delete("/:id")
+  @Auth()
+  @Middlewares([filterRoles(["admin"])])
+  deleteUser = (req: Request, res: Response) => {
+    this.handleDelete(req, res);
+  };
 }
 
 const controller = new UserController();
