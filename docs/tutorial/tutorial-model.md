@@ -27,6 +27,9 @@ Now you will see a new file on ```app/models``` with the name **Hero.ts**
   tableName: "hero",
 })
 export class Hero extends BaseModel<Hero> {
+  @ResponseRequired(true)
+  @RequestRequired(true)
+  @UpdateRequired(true)
   @Column({
     type: DataType.STRING,
     allowNull: true,
