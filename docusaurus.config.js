@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Flugzeug',
+  tagline: 'Lightweight backend framework for Node.js',
   url: 'https://your-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -26,12 +26,13 @@ const config = {
           // Please change this to your repo.
           editUrl: 'https://github.com/Rodmg/flugzeug',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/Rodmg/flugzeug',
-        },
+        blog: false ,
+        //{
+        //   showReadingTime: true,
+        //   // Please change this to your repo.
+        //   editUrl:
+        //     'https://github.com/Rodmg/flugzeug',
+        // },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
@@ -60,7 +61,7 @@ const config = {
             label: 'Tutorial',
           },
           {to: '/docs/framework/framework-structure', label: 'Framework', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
+          // {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/Rodmg/flugzeug',
             label: 'GitHub',
@@ -81,36 +82,25 @@ const config = {
             ],
           },
           {
-            title: 'Community',
+            title: ' ',
             items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://github.com/Rodmg/flugzeug',
-              },
-              {
-                label: 'Discord',
-                href: 'https://github.com/Rodmg/flugzeug',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://github.com/Rodmg/flugzeug',
-              },
+              
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
+              // {
+              //   label: 'Blog',
+              //   to: '/blog',
+              // },
               {
                 label: 'GitHub',
                 href: 'https://github.com/Rodmg/flugzeug',
               },
               {
                 label: 'npm',
-                href: 'https://www.npmjs.com/package/flugzeug',
+                href: 'https://www.npmjs.com/package/generator-flugzeug',
               },
             ],
           },
