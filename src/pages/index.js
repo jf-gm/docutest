@@ -56,7 +56,6 @@ export default function Home() {
       <div className="forms-cool bottom">
       </div>
       <Layout
-        title={`Hello from ${siteConfig.title}`}
         description="Description will go into a meta tag in <head />">
         <HomepageHeader />
         <CardsList items={cardsList} />

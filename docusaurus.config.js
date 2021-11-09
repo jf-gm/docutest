@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Flugzeug',
+  title: 'Flugzeug Framework',
   tagline: 'Lightweight backend framework for Node.js',
   url: 'https://your-test-site.com',
   baseUrl: '/',
