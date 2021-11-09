@@ -44,7 +44,6 @@
   flex-direction: column;
   justify-content: center;
   position: absolute;
-  /* transform: translateY(-0%); */
 }
 
 .component-code-window .visual-content .code-window {
