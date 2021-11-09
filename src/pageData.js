@@ -42,7 +42,7 @@ export const builtWith = [
     },
     {
       img: '/img/test/Ksquare-logo-stack.png',
-      title: 'Ksquare Hire Site'
+      title: 'Ks Hire App'
     }
   ]
 ]
