@@ -29,7 +29,7 @@
 }
 
 html[data-theme='light'] .component-card-carousel .carousel-item .component-card .title {
-  color: #0a0a0a;
+  color: #fafafa;
 }
 
 .component-card-carousel .indicators {
@@ -55,7 +55,7 @@ html[data-theme='light'] .component-card-carousel .carousel-item .component-card
 }
 
 .component-card-carousel .indicators > button.active {
-  background-color: rgb(171 186 255 / 80%);
+  background-color: rgb(40 45 68);
 }
 
 @media only screen and (max-width: 700px) {

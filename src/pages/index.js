@@ -67,7 +67,7 @@ export default function Home() {
           filenames={filenames}
           description={codeDescription}
         />
-        <h1 style={{textAlign: 'center', marginTop: '3rem'}}>Built with Flugzeug</h1>
+        <h1 style={{textAlign: 'center', marginTop: '3rem', color: '#fafafa'}}>Built with Flugzeug</h1>
         <CardCarousel data={builtWith} />
         <main>
           {/* <HomepageFeatures /> */}

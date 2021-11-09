@@ -8,7 +8,22 @@
   z-index: 99;
   border-radius: 5px;
   box-shadow: 0px 4px 25px #0a0a0a5b;
+}
+
+/* html[data-theme='dark']  */
+.component-card {
   animation: blur-out 2s ease forwards, backdrop-in-out 10s ease infinite;
+}
+
+html[data-theme='light'] 
+.component-card {
+  /* background-color: rgb(40 45 68);
+  box-shadow: 0px 9px 25px #0a0a0ad4; */
+  color: #fafafa;
+}
+
+html[data-theme='light'] .component-card .title {
+  color: #fafafa;
 }
 
 .component-card img {
