@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Head from '@docusaurus/Head';
 import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import CardsList from '../components/CardsList/CardsList';
@@ -10,6 +11,16 @@ import { builtWith, cardsList, codeDescription, codeTextFiles, commandOptions, f
 import './style.css';
 import CardCarousel, { CarouselItem } from '../components/CardCarousel/CardCarousel';
 import CodeWindow from '../components/CodeWindow/CodeWindow';
+
+const MySEO = () => (
+  <Head>
+    <meta property="og:description" content="Simplicity, Agility, and Robustness" />
+    <meta charSet="utf-8" />
+    <title>Flugzeug</title>
+    <meta name="description" content="Simplicity, Agility, and Robustness" data-react-helmet="true"/>
+    <link rel="canonical" href="http://mysite.com/example" />
+  </Head>
+);
 
 function HomepageHeader() {
   return (
@@ -39,6 +50,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <span className="landing-page">
+      <MySEO/>
       <div className="forms-cool top">
       </div>
       <div className="forms-cool bottom">
