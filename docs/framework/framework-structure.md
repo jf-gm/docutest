@@ -22,6 +22,7 @@ It is recommended to have basic knowledge of those technologies before working w
 - **tsconfig.json:** Typescript compiler configuration
 - **package.json:** npm project configuration
 
+
 ## App structure
 
 - **config:** Global configuration for the app
@@ -38,5 +39,12 @@ It is recommended to have basic knowledge of those technologies before working w
 - **main.ts:** Application starting point, useful for initializing the services, specially for those that require to be started with a certain order
 - **declarations.d.ts:** Special Typescript declarations for the project
 - **seedData.ts:** DB initial data population script
+
+# Project commands
+
+- **npm run makeDocumentation:** Create YAML documentation
+- **npm run makeValidators:** Create validator files
+- **npm run makeDBDiagram:** Create ERD diagram in documentation folder
+
 
 

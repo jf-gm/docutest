@@ -23,6 +23,7 @@ Models and associations will be automatically loaded on app startup, it is only 
 - `@ResponseRequired` optional decorator for API documentation.
 - `@RequestRequired` optional decorator for API documentation.
 - `@UpdateRequired` optional decorator for API documentation.
+- `@GenerateValidator` optional decorator to generate validator.
 
 Example:
 
@@ -37,6 +38,7 @@ import {
 } from "sequelize-typescript";
 import { User } from "./User";
 
+@GenerateValidator()
 @ApiDocs(true)
 @Table({
   tableName: "profile",
